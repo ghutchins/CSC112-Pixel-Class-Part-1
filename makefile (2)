@@ -1,0 +1,17 @@
+# Programmer: Georgina Hutchins						Course: CSC112 A
+# Assignment: 10							Date: 04/08/14
+
+CC = g++
+CFLAGS = -g -pg -Wall
+
+lab10: driver.o pixel.o
+	$(CC) $(CFLAGS) -0 lab10 driver.o pixel.o
+driver.o: driver.cpp pixel.h
+	$(CC) $(CFLAGS) -c driver.cpp
+pixel.o: pixel.cpp pixel.h
+	$(CC) $(CFLAGS) -c pixel.cpp
+clean:
+	\rm -f *.o lab10
+
+
+
